@@ -20,3 +20,18 @@ let num = 5;
 for (let i = 1; i <= 10; i++) {
     console.log(num + " x " + i + " = " + (num * i));
 }
+
+//TASK 4 – Star Pattern
+
+for (let i = 1; i <= 5; i++) {
+
+    for (let j = 1; j <= i; j++) {
+        console.log("*");
+    }
+
+}
+// i = 1 → *
+// i = 2 → * *
+// i = 3 → * * *
+// i = 4 → * * * *
+// i = 5 → * * * * *
