@@ -15,3 +15,28 @@ const send=(result)=>{
 }
 evenNumber(10,send)
 
+
+
+//Task 1
+
+function createBankAccount() {
+
+    let balance = 5000
+
+    function checkBalance() {
+        console.log("Account Balance:", balance)
+    }
+
+    return checkBalance
+}
+
+// Outside balance
+let balance = 100000
+
+console.log("Outside Balance:", balance)
+
+// Create bank account
+let account = createBankAccount()
+
+// Check private account balance
+account()
