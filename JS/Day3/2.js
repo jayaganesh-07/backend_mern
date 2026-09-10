@@ -1,0 +1,21 @@
+// Number Pattern using Nested for Loop
+for (let i = 1; i <= 5; i++) {
+    let pattern = ""
+
+    for (let j = 1; j <= i; j++) {
+        pattern += j + " "
+    }
+
+    console.log(pattern)
+}
+// Output:
+// 1
+// 1 2
+// 1 2 3
+// 1 2 3 4
+// 1 2 3 4 5
+// Explanation:
+// Outer Loop: Controls the number of rows and runs from 1 to 5.
+// Inner Loop: Prints numbers from 1 up to the current value of i.
+// Pattern: pattern += j + " " adds each number to the same row.
+// Console: console.log(pattern) prints the completed row.
