@@ -1,0 +1,22 @@
+//Task-1
+
+function createEmployee() {
+
+    // Private variable
+    let salary = 20000;
+
+    // Return inner arrow function
+    return (amount) => {
+        salary = salary + amount;
+        return salary;
+    };
+}
+
+// Store returned function
+let updateSalary = createEmployee();
+
+// Call multiple times
+console.log(updateSalary(5000));  // 25000
+console.log(updateSalary(3000));  // 28000
+console.log(updateSalary(2000));  // 30000
+
