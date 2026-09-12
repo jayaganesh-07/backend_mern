@@ -1,4 +1,7 @@
 // Sum of Numbers 
+
+
+
 let sum = 0;
 
 for (let a = 1; a <= 10; a++) {
@@ -6,6 +9,10 @@ for (let a = 1; a <= 10; a++) {
 }
 
 console.log("Sum =", sum);
+
+
+
+
 // Explanation
 // Initially, sum is 0.
 // The variable a starts from 1 and the loop executes until a <= 10.
