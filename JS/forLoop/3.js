@@ -1,0 +1,18 @@
+// Sum of Numbers 
+let sum = 0;
+
+for (let a = 1; a <= 10; a++) {
+    sum = sum + a;
+}
+
+console.log("Sum =", sum);
+// Explanation
+// Initially, sum is 0.
+// The variable a starts from 1 and the loop executes until a <= 10.
+// After every execution, a is incremented by 1.
+// Each value of a is added to sum.
+// a = 1 → sum = 0 + 1 = 1
+// a = 2 → sum = 1 + 2 = 3
+// a = 3 → sum = 3 + 3 = 6
+// a = 4 → sum = 6 + 4 = 10
+// a = 5 → sum = 10 + 5 = 15
