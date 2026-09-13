@@ -22,4 +22,26 @@ console.log(updateSalary(3000));  // 28000
 console.log(updateSalary(2000));  // 30000
 
 
+//task 2
+const createStock=()=>{
+    let stock=10
+    return{addStock:(add)=>{
+        stock+=add
+        console.log(stock);
+        
+    },sellStock:(sell)=>{
+        if(sell>stock){
+            console.log("Not Enough");
+            
+        }else{
+  stock-=sell
+  console.log(stock);
+  
+    }
+}
+}
+}
+let product=createStock()
+product.addStock(10)
+
 </script>
