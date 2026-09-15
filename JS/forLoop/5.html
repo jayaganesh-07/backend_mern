@@ -1,0 +1,30 @@
+<script>
+
+// Find duplicate numbers
+
+let arr = [2, 5, 3, 2, 7, 5, 8]
+
+for (let a = 0; a <= arr.length - 1; a++) {
+
+    for (let b = a + 1; b <= arr.length - 1; b++) {
+
+        if (arr[a] === arr[b]) {
+            console.log("Duplicate = " + arr[a])
+        }
+    }
+}
+
+
+// Output
+// Duplicate = 2
+// Duplicate = 5
+
+
+// Explanation
+// Outer loop selects one number.
+// Inner loop compares it with the next numbers.
+// arr[a] === arr[b] checks whether both numbers are same.
+// If they are same, the duplicate number is printed.
+// b = a + 1 prevents comparing the same pair again.
+
+</script>
