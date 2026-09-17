@@ -43,6 +43,26 @@ console.log(findd);
 
 
 
+// task 4
+let cart = [
+
+    { name: "Shirt", price: 1200 },
+
+    { name: "Shoes", price: 2500 },
+
+    { name: "Watch", price: 3000 },
+
+    { name: "Bag", price: 1500 }
+
+];
+
+
+
+let ressCart = cart.reduce((accum,cur)=>{
+return accum + cur.price
+},0)
+
+console.log(ressCart);
 
 
 
