@@ -1,0 +1,19 @@
+<script>
+
+    //Task 1
+    const calculate = (a, b, callback) => {
+
+    // Add two numbers
+    let result = a + b;
+
+    // Send result to callback
+    callback(result);
+};
+
+calculate(10, 20, (result) => {
+
+    // Print result
+    console.log("Result =", result);
+
+});
+</script>
