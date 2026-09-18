@@ -1,0 +1,26 @@
+<script>
+    // Find 0 and 1 Pattern looping
+
+
+for (let i = 1; i <= 5; i++) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+        if (j % 2 === 0) {
+            row += "0 ";
+        } else {
+            row += "1 ";
+        }
+    }
+
+    console.log(row);
+}
+
+// Explanation:
+// 1.Outer loop (i) → Controls the number of rows.
+// 2.Inner loop (j) → Controls the number of values in each row.
+// 3.j % 2 === 0 → Prints 0 for even numbers and 1 for odd numbers.
+// j = 1 → odd  → 1
+// j = 2 → even → 0
+// j = 3 → odd  → 1
+</script>
