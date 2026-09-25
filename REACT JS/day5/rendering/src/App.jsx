@@ -1,11 +1,15 @@
-import React from 'react'
 
-const App = () => {
+ 
+const app = () => {
+    const array = ["samatha","nayanthara","trisha","pooja hedge","kayadu"]
+
+
+
   return (
-  <>
-  <nonprimitive/>
-  </>
+   <>
+   
+   </>
   )
 }
 
-export default App
+export default app;
