@@ -10,7 +10,8 @@ const DataType = () => {
     let students = [
     { id: 1, name: "Arun", course: "React" },
     { id: 2, name: "Priya", course: "Node" },
-    { id: 3, name: "Kumar", course: "MongoDB" }
+    { id: 3, name: "Kumar", course: "MongoDB" },
+    {id: 3, name: "Vimal", course: "Express"}
 ]
   return (
     <>

@@ -1,15 +1,14 @@
 
  
-const app = () => {
-    const array = ["samatha","nayanthara","trisha","pooja hedge","kayadu"]
+import DataType from './components/DataType'
+import Display from './components/Display'
 
-
-
+const App = () => {
   return (
-   <>
-   
-   </>
+    <>
+   <DataType/>
+    </>
   )
 }
 
-export default app;
+export default App
