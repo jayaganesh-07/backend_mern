@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Task from './Components/Task'
 
 const App = () => {
 //Task-1
@@ -40,11 +41,13 @@ const [employeeList,setEmployeeList]=useState([
 const addEmployee = () => {
   setEmployeeList([...employeeList,{id: 4, name: "Bala", salary: 32000}])
 }
-const changeSalary=()=>{
-  setEmployeeList([...employeeList,{ id: 2, name: "Priya", salary: 35000 }])
+const changeSalary =()=>{
+  setEmployeeList((p)=>[...p].map((e,i)=>i===1?{...e,salary:35000}:e))
 }
   return (
     <>
+    <Task/>
+
     <div className="p-5">
 
       {/* TASK 1 */}
