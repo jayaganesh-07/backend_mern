@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Task1 from "./Components/Task1"
 
 const App = () => {
   const [data,setData]=useState("")
@@ -13,12 +14,17 @@ const App = () => {
   }
   return (
     <>
+
+
 <div>
   <h1>{data}</h1>
 <input type="text" value={addData}  onChange={handleChange} /> <br /> <br />
 <button onClick={handleClick} >sumit</button>
 </div>
 
+
+<br /><br />
+<Task1/>
     
     </>
   )
