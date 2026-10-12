@@ -17,11 +17,7 @@ const App = () => {
   }
 
   const updateCSS = () => {
-    setCourses(
-      courses.map((course) =>
-        course === "CSS" ? "Advanced CSS" : course
-      )
-    )
+    setCourses(courses.map((course) => course === "CSS" ? "Advanced CSS" : course ) )
   }
 //Tast-3
  const [product, setProduct] = useState({ name: "Laptop", price: 45000, stock: 10})

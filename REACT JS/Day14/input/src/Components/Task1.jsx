@@ -2,17 +2,13 @@
 import { useState } from "react";
 
 const Task1 = () => {
-  const [studentName, setStudentName] = useState("");
+  const [studentName, setStudentName] = useState("")
   const [students, setStudents] = useState([]);
 
   const addStudent = () => {
-    // if (studentName === "") {
-    //   return;
-    // }
-
     setStudents([...students, studentName]);
     setStudentName("")
-  };
+  }
 
   return (
     <div>
