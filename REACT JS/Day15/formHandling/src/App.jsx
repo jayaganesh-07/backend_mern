@@ -20,6 +20,12 @@ const App = () => {
     <div className="p-5">
       <h1 className="text-2xl font-bold mb-4">Registration Form</h1>
 
+
+
+
+
+      
+
       <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-80">
         <input type="text" name="name" placeholder="Enter Name" value={formData.name} onChange={handleChange} className="border p-2"required />
 
