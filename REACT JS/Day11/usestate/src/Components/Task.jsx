@@ -15,7 +15,7 @@ const handleChange=()=>{
 // const update =   arr.map((e)=>e.salary==30000?{...e,salary:e.salary+5000}:e)
 // console.log(update);
 
- setObj((p)=>p.map((e)=>e.id==2?{...e,salary:e.salary+5000}:e))
+ setObj((p)=>p.map((e)=>e.id==2 ?{...e,salary:e.salary+5000}:e))
 
 
 // setObj(update)

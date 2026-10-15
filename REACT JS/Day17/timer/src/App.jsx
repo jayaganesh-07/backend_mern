@@ -5,9 +5,6 @@ const App = () => {
 
 const [time,setTime]=useState(0)
  
-
-
-const handleClick = ()=>{
    
 useEffect(()=>{
   const timer = setInterval(()=>{
@@ -18,6 +15,9 @@ useEffect(()=>{
     clearInterval(timer)
   }
 },[])
+
+const handleClick = ()=>{
+ setTime((p)=>p+1)
 }
 
 
