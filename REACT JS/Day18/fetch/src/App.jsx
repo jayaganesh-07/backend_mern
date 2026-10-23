@@ -174,28 +174,144 @@
 // export default App;
 
 
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 
-const App = () => {
+// const App = () => {
 
-  const [color, setColor] = useState(false)
+//   const [color, setColor] = useState(false)
 
-  const handlechange = () => {
-    setColor(!color)
+//   const handlechange = () => {
+//     setColor(!color)
+//   }
+
+//   return (
+//     <>
+//       <div className={color ? 'bg-blue-500 h-screen' : 'bg-amber-200 h-screen'}>
+//         <h1>Colour Change</h1>
+
+//         <button onClick={handlechange}>
+//           Change Theme
+//         </button>
+//       </div>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+
+
+import { useState } from "react";
+
+function App() {
+  const [page, setPage] = useState("register");
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // Register
+  const register = () => {
+    const user = { name, email, password };
+
+    localStorage.setItem("user", JSON.stringify(user));
+
+    alert("Registration Successful");
+    setPage("login");
+  };
+
+  // Login
+  const login = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (
+      user &&
+      user.email === email &&
+      user.password === password
+    ) {
+      setName(user.name);
+      setPage("dashboard");
+    } else {
+      alert("Invalid Email or Password");
+    }
+  };
+
+  // Dashboard
+  if (page === "dashboard") {
+    return (
+      <div>
+        <h1>Dashboard</h1>
+        <h2>Welcome {name}</h2>
+        <button onClick={() => setPage("login")}>Logout</button>
+      </div>
+    );
   }
 
   return (
-    <>
-      <div className={color ? 'bg-blue-500 h-screen' : 'bg-amber-200 h-screen'}>
-        <h1>Colour Change</h1>
+    <div>
+      {page === "register" ? (
+        <>
+          <h1>Register</h1>
 
-        <button onClick={handlechange}>
-          Change Theme
-        </button>
-      </div>
-    </>
-  )
+          <input
+            placeholder="Name"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <br /><br />
+
+          <input
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <br /><br />
+
+          <input
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <br /><br />
+
+          <button onClick={register}>Register</button>
+
+          <p>
+            Already registered?
+            <button onClick={() => setPage("login")}>Login</button>
+          </p>
+        </>
+      ) : (
+        <>
+          <h1>Login</h1>
+
+          <input
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <br /><br />
+
+          <input
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <br /><br />
+
+          <button onClick={login}>Login</button>
+
+          <p>
+            New user?
+            <button onClick={() => setPage("register")}>
+              Register
+            </button>
+          </p>
+        </>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
+
+
 
