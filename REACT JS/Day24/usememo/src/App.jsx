@@ -1,43 +1,61 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 
-const App = () => {
-const [theme, setTheme] = useState(true)
-const [odd, setOdd] = useState("");
+// Function outside the component
+const calculateDouble = (num) => {
 
-const handleChange = () => {
-setTheme(!theme)
+  console.log("Calculation Running...")
+
+  let result = num * 2
+
+  // Expensive calculation
+  for (let i = 0; i < 100000000; i++) {
+    result = num * 2
+  }
+
+  return result
 }
 
-const handleOdd = (e) => { 
-  const num = Number(e.target.value); 
-  if (num % 2 !== 0) { 
-    setOdd(num);
-    
-   } else { setOdd("Please enter an odd number"); } };
-return (
-<>
-<div className={theme ? "bg-amber-200 text-black h-15" : "bg-black text-white h-15"}>
+const App = () => {
 
+  const [number, setNumber] = useState(0)
+  const [theme, setTheme] = useState(false)
 
-    <h1>Theme Change</h1>
+  // useMemo
+  const double = useMemo(() => {
+    return calculateDouble(number)
+  }, [number])
 
-    <button className='rounded-3xl border-4' onClick={handleChange}>
-      Change Theme
-    </button>
+  const handleTheme = () => {
+    setTheme(!theme)
+  }
 
-    <br />
+  return (
+    <>
+      <div style={{
+        backgroundColor: theme ? "black" : "white",
+        color: theme ? "white" : "black",
+        padding: "30px",
+        height: "100vh"
+      }}>
 
- <div> 
-  <h1>{odd}</h1>
-   <input className='border-4' type="number" onChange={handleOdd} /> 
-   <button>Odd Number</button> 
-   </div>
+        <h1>Number Multiplication</h1>
 
-  </div>
-</>
+        <input
+          type="number"
+          value={number}
+          onChange={(e) => setNumber(Number(e.target.value))}
+          placeholder="Enter Number"
+        />
 
+        <h2>Double: {double}</h2>
 
-)
+        <button onClick={handleTheme}>
+          Change Theme
+        </button>
+
+      </div>
+    </>
+  )
 }
 
 export default App
