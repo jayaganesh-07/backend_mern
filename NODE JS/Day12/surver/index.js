@@ -2,23 +2,23 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import stuRoute from './routes/stuRoute.js'
-
 import DataDB from './config/DataDB.js'
-
-const app = express()
 
 dotenv.config()
 
-DataDB()
+const app = express()
+
 app.use(cors())
 app.use(express.json())
 
-app.use("/api/student",stuRoute)
+app.use("/api/student", stuRoute)
 
 const PORT = process.env.PORT || 3000
 
-
-app.listen(PORT,()=>{
-    console.log(`servre connected http://localhost:${PORT}`);
-    
+DataDB().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server connected http://localhost:${PORT}`)
+    })
+}).catch((error) => {
+    console.log("Database connection failed:", error.message)
 })
